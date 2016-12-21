@@ -9,6 +9,5 @@ insert into tbl_component(name, category, component, time)
 values(#{name}, #{category}, #{component}, #{time})
 </insert>
 
-<delete 
 
 </mapper>
