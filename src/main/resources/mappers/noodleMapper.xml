@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.noodle.mapper.NoodleMapper">
+
+	<insert id="create">
+		insert into tbl_noodle (name, brand, thumbnail, weight, soupColor,noodleType, type)
+		values(#{name},#{brand},#{thumbnail},#{weight},#{soupColor},#{noodleType},#{type})
+	</insert>
+	
+	<select id="read" resultType="NoodleVO">
+select name, brand, thumbnail, weight, soupColor, noodleType,type from tbl_noodle where name = #{name}
+</select>
+
+</mapper>
