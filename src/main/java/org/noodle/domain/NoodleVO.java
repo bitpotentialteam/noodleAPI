@@ -190,7 +190,7 @@ public class NoodleVO {
 				+ ", rank=" + rank + ", water=" + water + ", minutes=" + minutes + "]";
 	}
 	
-	
+	   
 	
 	
 }
