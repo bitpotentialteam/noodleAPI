@@ -11,8 +11,13 @@
 		#{transFat}, #{cholesterol}, #{natrium})
 	</insert>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete">
 		delete from tbl_nutrition where #{name}
 	</delete>
 
+<update id="update" parameterType="NoodleVO">
+		update tbl_nutrition set
+		name=#{name}, calories=#{calories}, carbohydrate=#{carbohydrate}, protein=#{protein},
+		fat=#{fat}, saturatedFat=#{saturatedFat}, transFat=#{transFat}, cholesterol=#{cholesterol}, natrium=#{natrium}
+	</update>
 </mapper>

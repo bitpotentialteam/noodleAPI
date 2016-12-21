@@ -9,8 +9,13 @@ insert into tbl_recipe(name, water, minutes)
 values(#{name}, #{water}, #{minutes})
 </insert>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete">
 		delete from tbl_recipe where #{name}
 	</delete>
+	
+	<update id="update" parameterType="NoodleVO">
+		update tbl_recipe set
+		name=#{name}, water=#{water}, minutes=#{minutes}
+	</update>
  
 </mapper>

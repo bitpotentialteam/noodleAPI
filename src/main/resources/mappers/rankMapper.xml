@@ -9,7 +9,12 @@ insert into tbl_rank(name, year, rank)
 values(#{name}, #{year}, #{rank})
 </insert>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete">
 		delete from tbl_rank where #{name}
 	</delete>
+	
+	<update id="update" parameterType="NoodleVO">
+		update tbl_rank set
+		name=#{name}, year=#{year}, component=#{component}, time=#{time}
+	</update>
 </mapper>

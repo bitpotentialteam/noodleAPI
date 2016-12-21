@@ -14,8 +14,14 @@
 select name, brand, thumbnail, weight, soupColor, noodleType,type from tbl_noodle where name = #{name}
 </select>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete">
 		delete from tbl_noodle where #{name}
 	</delete>
+	
+	<update id="update" parameterType="NoodleVO">
+		update tbl_noodle set
+		name=#{name}, brand=#{brand}, thumbnail=#{thumbnail}, weight=#{weight},
+		soupcolor=#{soupcolor}, noodletype=#{noodletype}, type=#{type}
+	</update>
 
 </mapper>

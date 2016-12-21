@@ -9,8 +9,13 @@ insert into tbl_material(name, material_noodle, material_powder)
 values(#{name}, #{material_noodle}, #{material_powder})
 </insert>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete">
 		delete from tbl_material where #{name}
 	</delete>
+	
+	<update id="update" parameterType="NoodleVO">
+		update tbl_material set
+		name=#{name}, material_noodle=#{material_noodle}, material_powder=#{material_powder}
+	</update>
 
 </mapper>

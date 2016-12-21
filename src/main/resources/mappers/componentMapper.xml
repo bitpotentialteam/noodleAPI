@@ -9,7 +9,12 @@
 		values(#{name}, #{category}, #{component}, #{time})
 	</insert>
 
-	<delete id="delete" parameterType="java.lang.String">
+	<delete id="delete">
 		delete from tbl_component where #{name}
 	</delete>
+	
+	<update id="update" parameterType="NoodleVO">
+		update tbl_component set
+		name=#{name}, category=#{category}, component=#{component}, time=#{time}
+	</update>
 </mapper>
