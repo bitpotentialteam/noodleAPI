@@ -10,7 +10,7 @@ values(#{name}, #{material_noodle}, #{material_powder})
 </insert>
 
 	<delete id="delete">
-		delete from tbl_material where #{name}
+		delete from tbl_material where name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">

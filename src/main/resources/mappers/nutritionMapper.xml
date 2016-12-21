@@ -12,7 +12,7 @@
 	</insert>
 
 	<delete id="delete">
-		delete from tbl_nutrition where #{name}
+		delete from tbl_nutrition where name=#{name}
 	</delete>
 
 <update id="update" parameterType="NoodleVO">

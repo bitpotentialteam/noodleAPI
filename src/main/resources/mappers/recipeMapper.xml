@@ -10,7 +10,7 @@ values(#{name}, #{water}, #{minutes})
 </insert>
 
 	<delete id="delete">
-		delete from tbl_recipe where #{name}
+		delete from tbl_recipe where name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">

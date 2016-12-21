@@ -10,7 +10,7 @@ values(#{name}, #{year}, #{rank})
 </insert>
 
 	<delete id="delete">
-		delete from tbl_rank where #{name}
+		delete from tbl_rank where name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">

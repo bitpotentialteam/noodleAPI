@@ -15,7 +15,7 @@ select name, brand, thumbnail, weight, soupColor, noodleType,type from tbl_noodl
 </select>
 
 	<delete id="delete">
-		delete from tbl_noodle where #{name}
+		delete from tbl_noodle where name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">
