@@ -1,5 +1,7 @@
 package org.noodle.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.noodle.domain.NoodleVO;
@@ -34,6 +36,12 @@ public class NutritionServiceImpl implements NutritionService {
 	public void remove(String name) throws Exception {
 
 		dao.delete(name);
+	}
+
+	@Override
+	public List<NoodleVO> listAll() throws Exception {
+
+		return dao.listAll();
 	}
 
 }

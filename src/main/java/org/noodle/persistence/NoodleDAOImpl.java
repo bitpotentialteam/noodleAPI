@@ -1,5 +1,7 @@
 package org.noodle.persistence;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -37,6 +39,12 @@ public class NoodleDAOImpl implements NoodleDAO {
 	public void delete(String name) throws Exception {
 
 		session.delete(namespace+".delete",name);
+	}
+
+	@Override
+	public List<NoodleVO> listAll() throws Exception {
+
+		return session.selectList(namespace+".listAll");
 	}
 
 }
