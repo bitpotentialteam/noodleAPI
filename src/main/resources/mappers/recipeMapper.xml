@@ -12,5 +12,5 @@ values(#{name}, #{water}, #{minutes})
 	<delete id="delete" parameterType="java.lang.String">
 		delete from tbl_recipe where #{name}
 	</delete>
-
+ 
 </mapper>
