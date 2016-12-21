@@ -4,15 +4,17 @@ import java.sql.Date;
 
 public class NoodleVO {
 
+	// tbl_noodle
 	private String name;
 	private String brand;
 	private String thumbnail;
 	private int weight;
 	private String soupColor;
-	private Date regdate;
 	private String noodleType;
 	private String type;
+	private Date regdate;
 	private Date updatedate;
+	
 	private int calories;
 	private int carbohydrate;
 	private int protein;
@@ -21,14 +23,21 @@ public class NoodleVO {
 	private int transFat;
 	private int cholesterol;
 	private int natrium;
+	
 	private String material_noodle;
+	private String material_powder;
+	
 	private String category;
 	private String component;
 	private int time;
+
 	private int year;
 	private int rank;
+
 	private int water;
 	private int minutes;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -59,12 +68,6 @@ public class NoodleVO {
 	public void setSoupColor(String soupColor) {
 		this.soupColor = soupColor;
 	}
-	public Date getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
-	}
 	public String getNoodleType() {
 		return noodleType;
 	}
@@ -76,6 +79,12 @@ public class NoodleVO {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 	public Date getUpdatedate() {
 		return updatedate;
@@ -137,6 +146,12 @@ public class NoodleVO {
 	public void setMaterial_noodle(String material_noodle) {
 		this.material_noodle = material_noodle;
 	}
+	public String getMaterial_powder() {
+		return material_powder;
+	}
+	public void setMaterial_powder(String material_powder) {
+		this.material_powder = material_powder;
+	}
 	public String getCategory() {
 		return category;
 	}
@@ -182,13 +197,16 @@ public class NoodleVO {
 	@Override
 	public String toString() {
 		return "NoodleVO [name=" + name + ", brand=" + brand + ", thumbnail=" + thumbnail + ", weight=" + weight
-				+ ", soupColor=" + soupColor + ", regdate=" + regdate + ", noodleType=" + noodleType + ", type=" + type
+				+ ", soupColor=" + soupColor + ", noodleType=" + noodleType + ", type=" + type + ", regdate=" + regdate
 				+ ", updatedate=" + updatedate + ", calories=" + calories + ", carbohydrate=" + carbohydrate
 				+ ", protein=" + protein + ", fat=" + fat + ", saturatedFat=" + saturatedFat + ", transFat=" + transFat
 				+ ", cholesterol=" + cholesterol + ", natrium=" + natrium + ", material_noodle=" + material_noodle
-				+ ", category=" + category + ", component=" + component + ", time=" + time + ", year=" + year
-				+ ", rank=" + rank + ", water=" + water + ", minutes=" + minutes + "]";
+				+ ", material_powder=" + material_powder + ", category=" + category + ", component=" + component
+				+ ", time=" + time + ", year=" + year + ", rank=" + rank + ", water=" + water + ", minutes=" + minutes
+				+ "]";
 	}
+	
+	
 	
 	   
 	  
