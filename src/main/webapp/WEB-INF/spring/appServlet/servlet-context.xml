@@ -21,8 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
+	<context:component-scan base-package="org.noodle.controller" />
 	<context:component-scan base-package="org.noodle.web" />
-	
-	
 	
 </beans:beans>
