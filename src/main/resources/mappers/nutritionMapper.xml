@@ -9,5 +9,8 @@ insert into tbl_nutrition(name, calories, carbohydrate, protein, fat, saturatedf
 values(#{name}, #{calories}, #{carbohydrate}, #{protein}, #{fat}, #{saturatedfat}, #{transfat}, #{cholesterol}, #{natrium})
 </insert>
 
+	<delete id="delete" parameterType="java.lang.String">
+		delete from tbl_nutrition where #{name}
+	</delete>
 
 </mapper>

@@ -9,5 +9,8 @@ insert into tbl_material(name, material_noodle, material_powder)
 values(#{name}, #{material_noodle}, #{material_powder})
 </insert>
 
+	<delete id="delete" parameterType="java.lang.String">
+		delete from tbl_material where #{name}
+	</delete>
 
 </mapper>

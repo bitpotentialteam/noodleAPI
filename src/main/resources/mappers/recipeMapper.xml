@@ -9,6 +9,8 @@ insert into tbl_recipe(name, water, minutes)
 values(#{name}, #{water}, #{minutes})
 </insert>
 
-
+	<delete id="delete" parameterType="java.lang.String">
+		delete from tbl_recipe where #{name}
+	</delete>
 
 </mapper>
