@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.noodle.domain.NoodleVO;
+import org.noodle.domain.SearchCriteria;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -44,6 +45,12 @@ public class ComponentDAOImpl implements ComponentDAO {
 	public List<NoodleVO> listAll() throws Exception {
 
 		return session.selectList(namespace+".listAll");
+	}
+
+	@Override
+	public List<NoodleVO> listSearch(SearchCriteria cri) throws Exception {
+
+		return session.selectList(namespace+".listSearch",cri);
 	}
 
 }
