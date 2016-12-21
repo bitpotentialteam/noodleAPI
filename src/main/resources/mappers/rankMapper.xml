@@ -9,6 +9,10 @@ insert into tbl_rank(name, year, rank)
 values(#{name}, #{year}, #{rank})
 </insert>
 
+<select id="read" resultType="NoodleVO">
+select name, year, rank from tbl_rank where name = #{name}
+</select>
+
 	<delete id="delete">
 		delete from tbl_rank where name=#{name}
 	</delete>

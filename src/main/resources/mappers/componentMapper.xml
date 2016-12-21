@@ -8,6 +8,10 @@
 		insert into tbl_component(name, category, component, time)
 		values(#{name}, #{category}, #{component}, #{time})
 	</insert>
+	
+	<select id="read" resultType="NoodleVO">
+select name, category, component, time from tbl_component where name = #{name}
+</select>
 
 	<delete id="delete">
 		delete from tbl_component where name=#{name}
@@ -17,4 +21,6 @@
 		update tbl_component set
 		name=#{name}, category=#{category}, component=#{component}, time=#{time}
 	</update>
+	
+	
 </mapper>

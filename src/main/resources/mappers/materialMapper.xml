@@ -9,6 +9,10 @@ insert into tbl_material(name, material_noodle, material_powder)
 values(#{name}, #{material_noodle}, #{material_powder})
 </insert>
 
+<select id="read" resultType="NoodleVO">
+select name, material_noodle, material_powder from tbl_material where name = #{name}
+</select>
+
 	<delete id="delete">
 		delete from tbl_material where name=#{name}
 	</delete>
