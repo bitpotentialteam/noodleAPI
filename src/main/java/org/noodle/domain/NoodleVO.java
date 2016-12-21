@@ -15,6 +15,7 @@ public class NoodleVO {
 	private Date regdate;
 	private Date updatedate;
 	
+	// tbl_nutrition
 	private int calories;
 	private int carbohydrate;
 	private int protein;
@@ -24,16 +25,21 @@ public class NoodleVO {
 	private int cholesterol;
 	private int natrium;
 	
+	//tbl_material
 	private String material_noodle;
 	private String material_powder;
 	
+	//tbl_component
 	private String category;
 	private String component;
 	private int time;
 
+	
+	//tbl_rank
 	private int year;
 	private int rank;
 
+	//tbl_recipe
 	private int water;
 	private int minutes;
 	
