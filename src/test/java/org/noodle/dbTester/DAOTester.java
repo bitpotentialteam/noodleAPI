@@ -74,7 +74,7 @@ public class DAOTester {
 	public void searchListTest()throws Exception{
 		
 		Criteria cri = new Criteria();
-		cri.setOrderType("nd");
+		cri.setOrderType("n");
 		
 		List<NoodleVO> list = dao.listSearch(cri);
 		System.out.println(list);

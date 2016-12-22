@@ -26,19 +26,8 @@ select name, brand, thumbnail, weight, soupColor, releaseDate, noodleType,type f
 	
 	<select id="listSearch" resultType="NoodleVo">
 	
-		<![CDATA[	select *
-		from (SELECT *
-				FROM (
-		  			SELECT *
-		    		FROM tbl_noodle
-					) noodle
-				where rownum <= 10
-			)
-		where rownum >= 1
-			]]>
-			
-			<!-- 저기 10은 나중에 pagecri 한다음에 바꾸ㅓ주세여~! -->
-			
+		select * from tbl_noodle
+		
 				<if test="orderType != null">
 			<if test="orderType == 'n'.toString()">
 				order by RELEASEDATE desc

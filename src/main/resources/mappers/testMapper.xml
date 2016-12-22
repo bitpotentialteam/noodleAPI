@@ -5,6 +5,8 @@
 
 <mapper namespace="org.noodle.mapper.TestMapper">
 
+<!-- 페이징처리되어있는애임!!!! -->
+
 	<select id="test" resultType="NoodleVO">
 			<![CDATA[ select *
 		from (SELECT *
