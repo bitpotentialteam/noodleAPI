@@ -4,31 +4,33 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.noodle.domain.NoodleVO;
 import org.noodle.domain.Criteria;
-import org.noodle.persistence.NoodleDAO;
+import org.noodle.domain.RecipeVO;
+import org.noodle.persistence.RecipeDAO;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MaterialServiceImpl implements MaterialService {
+public class RecipeServiceImpl implements RecipeService {
 
 	@Inject
-	private NoodleDAO dao;
+	private RecipeDAO dao;
+	
 	
 	@Override
-	public void regist(NoodleVO vo) throws Exception {
+	public void regist(RecipeVO vo) throws Exception {
 
 		dao.create(vo);
+		
 	}
 
 	@Override
-	public NoodleVO read(String name) throws Exception {
+	public RecipeVO read(String name) throws Exception {
 
 		return dao.read(name);
 	}
 
 	@Override
-	public void modify(NoodleVO vo) throws Exception {
+	public void modify(RecipeVO vo) throws Exception {
 
 		dao.update(vo);
 	}
@@ -40,13 +42,13 @@ public class MaterialServiceImpl implements MaterialService {
 	}
 
 	@Override
-	public List<NoodleVO> listAll() throws Exception {
+	public List<RecipeVO> listAll() throws Exception {
 
 		return dao.listAll();
 	}
 
 	@Override
-	public List<NoodleVO> listSearch(Criteria cri) throws Exception {
+	public List<RecipeVO> listSearch(Criteria cri) throws Exception {
 
 		return dao.listSearch(cri);
 	}

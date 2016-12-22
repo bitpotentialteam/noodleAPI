@@ -5,7 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
-import org.noodle.domain.NoodleVO;
+import org.noodle.domain.RankVO;
 import org.noodle.domain.Criteria;
 import org.springframework.stereotype.Repository;
 
@@ -20,19 +20,19 @@ public class RankDAOImpl implements RankDAO {
 	
 	
 	@Override
-	public void create(NoodleVO vo) throws Exception {
+	public void create(RankVO vo) throws Exception {
 
 		session.insert(namespace+".create",vo);
 	}
 
 	@Override
-	public NoodleVO read(String name) throws Exception {
+	public RankVO read(String name) throws Exception {
 
 		return session.selectOne(namespace+".read",name);
 	}
 
 	@Override
-	public void update(NoodleVO vo) throws Exception {
+	public void update(RankVO vo) throws Exception {
 
 		session.update(namespace+".update",vo);
 	}
@@ -44,13 +44,13 @@ public class RankDAOImpl implements RankDAO {
 	}
 
 	@Override
-	public List<NoodleVO> listAll() throws Exception {
+	public List<RankVO> listAll() throws Exception {
 
 		return session.selectList(namespace+".listAll");
 	}
 
 	@Override
-	public List<NoodleVO> listSearch(Criteria cri) throws Exception {
+	public List<RankVO> listSearch(Criteria cri) throws Exception {
 
 		return session.selectList(namespace+".listSearch",cri);
 	}

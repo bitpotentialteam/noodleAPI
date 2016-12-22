@@ -29,20 +29,6 @@ public class NoodleVO {
 	//tbl_material
 	private String material_noodle;
 	private String material_powder;
-	
-	//tbl_component
-	private String category;
-	private String component;
-	private int time;
-
-	
-	//tbl_rank
-	private int year;
-	private int rank;
-
-	//tbl_recipe
-	private int water;
-	private int minutes;
 	public String getName() {
 		return name;
 	}
@@ -163,48 +149,6 @@ public class NoodleVO {
 	public void setMaterial_powder(String material_powder) {
 		this.material_powder = material_powder;
 	}
-	public String getCategory() {
-		return category;
-	}
-	public void setCategory(String category) {
-		this.category = category;
-	}
-	public String getComponent() {
-		return component;
-	}
-	public void setComponent(String component) {
-		this.component = component;
-	}
-	public int getTime() {
-		return time;
-	}
-	public void setTime(int time) {
-		this.time = time;
-	}
-	public int getYear() {
-		return year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
-	public int getRank() {
-		return rank;
-	}
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
-	public int getWater() {
-		return water;
-	}
-	public void setWater(int water) {
-		this.water = water;
-	}
-	public int getMinutes() {
-		return minutes;
-	}
-	public void setMinutes(int minutes) {
-		this.minutes = minutes;
-	}
 	@Override
 	public String toString() {
 		return "NoodleVO [name=" + name + ", brand=" + brand + ", thumbnail=" + thumbnail + ", weight=" + weight
@@ -212,11 +156,9 @@ public class NoodleVO {
 				+ noodleType + ", type=" + type + ", updatedate=" + updatedate + ", calories=" + calories
 				+ ", carbohydrate=" + carbohydrate + ", protein=" + protein + ", fat=" + fat + ", saturatedFat="
 				+ saturatedFat + ", transFat=" + transFat + ", cholesterol=" + cholesterol + ", natrium=" + natrium
-				+ ", material_noodle=" + material_noodle + ", material_powder=" + material_powder + ", category="
-				+ category + ", component=" + component + ", time=" + time + ", year=" + year + ", rank=" + rank
-				+ ", water=" + water + ", minutes=" + minutes + "]";
+				+ ", material_noodle=" + material_noodle + ", material_powder=" + material_powder + "]";
 	}
-	
+
 	
 
 	
