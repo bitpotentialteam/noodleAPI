@@ -5,8 +5,18 @@
 
 <mapper namespace="org.noodle.mapper.TestMapper">
 
-<sql id="order">
-
+	<select id="test" resultType="NoodleVO">
+			<![CDATA[ select *
+		from (SELECT *
+				FROM (
+		  			SELECT *
+		    		FROM tbl_noodleapi
+					) 
+				where rownum <= 10
+			)
+		where rownum >= 1
+		
+		]]>
 		<if test="orderType != null">
 			<if test="orderType == 'n'.toString()">
 				order by RELEASEDATE desc
@@ -30,12 +40,8 @@
 				order by rank asc
 			</if>
 		</if>
-		
-	</sql>
-		
-	<select id="test" resultType="NoodleVO">
-		select * tbl_noodleapi
 
+		
 	</select>
 
 

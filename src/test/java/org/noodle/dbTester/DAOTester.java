@@ -10,6 +10,7 @@ import org.noodle.domain.Criteria;
 import org.noodle.domain.NoodleVO;
 import org.noodle.persistence.NoodleDAO;
 import org.noodle.persistence.NutritionDAO;
+import org.noodle.persistence.TestDAO;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,6 +23,9 @@ public class DAOTester {
 	
 	@Inject
 	private NutritionDAO ndao;
+	
+	@Inject
+	private TestDAO tdao;
 	
 	@Test
 	public void testCreate() throws Exception{
@@ -74,7 +78,18 @@ public class DAOTester {
 		
 		List<NoodleVO> list = dao.listSearch(cri);
 		System.out.println(list);
-	}
+	} 
 	
+	
+	@Test
+	public void orderTest() throws Exception{
+
+		Criteria cri = new Criteria();
+		cri.setOrderType("rk");
+		
+		List<NoodleVO> list = tdao.orderTest(cri);
+		System.out.println(list);
+		
+	}
 	
 }
