@@ -5,7 +5,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.noodle.domain.NoodleVO;
-import org.noodle.domain.SearchCriteria;
+import org.noodle.domain.Criteria;
 import org.noodle.persistence.NoodleDAO;
 import org.springframework.stereotype.Service;
 
@@ -46,7 +46,7 @@ public class NutritionServiceImpl implements NutritionService {
 	}
 
 	@Override
-	public List<NoodleVO> listSearch(SearchCriteria cri) throws Exception {
+	public List<NoodleVO> listSearch(Criteria cri) throws Exception {
 
 		return dao.listSearch(cri);
 	}

@@ -1,10 +1,10 @@
 package org.noodle.domain;
 
-public class SearchCriteria {
+public class Criteria {
 
 	private String searchType;
 	private String keyword;
-	
+	private String orderType;
 	public String getSearchType() {
 		return searchType;
 	}
@@ -17,10 +17,19 @@ public class SearchCriteria {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+	public String getOrderType() {
+		return orderType;
+	}
+	public void setOrderType(String orderType) {
+		this.orderType = orderType;
+	}
 	@Override
 	public String toString() {
-		return "SearchCriteria [searchType=" + searchType + ", keyword=" + keyword + "]";
+		return "SearchCriteria [searchType=" + searchType + ", keyword=" + keyword + ", orderType=" + orderType + "]";
 	}
+	
+
+	
 	
 	
 	

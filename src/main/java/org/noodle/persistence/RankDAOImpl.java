@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.noodle.domain.NoodleVO;
-import org.noodle.domain.SearchCriteria;
+import org.noodle.domain.Criteria;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -50,7 +50,7 @@ public class RankDAOImpl implements RankDAO {
 	}
 
 	@Override
-	public List<NoodleVO> listSearch(SearchCriteria cri) throws Exception {
+	public List<NoodleVO> listSearch(Criteria cri) throws Exception {
 
 		return session.selectList(namespace+".listSearch",cri);
 	}

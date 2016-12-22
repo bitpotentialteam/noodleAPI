@@ -3,7 +3,7 @@ package org.noodle.persistence;
 import java.util.List;
 
 import org.noodle.domain.NoodleVO;
-import org.noodle.domain.SearchCriteria;
+import org.noodle.domain.Criteria;
 
 public interface RankDAO {
 
@@ -12,5 +12,5 @@ public interface RankDAO {
 	public void update(NoodleVO vo)throws Exception;
 	public void delete(String name)throws Exception;
 	public List<NoodleVO> listAll()throws Exception;
-	public List<NoodleVO> listSearch(SearchCriteria cri)throws Exception;
+	public List<NoodleVO> listSearch(Criteria cri)throws Exception;
 }
