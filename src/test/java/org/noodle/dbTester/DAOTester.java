@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noodle.domain.NoodleVO;
 import org.noodle.persistence.NoodleDAO;
+import org.noodle.persistence.NutritionDAO;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -15,6 +16,9 @@ public class DAOTester {
 
 	@Inject
 	private NoodleDAO dao;
+	
+	@Inject
+	private NutritionDAO ndao;
 	
 	@Test
 	public void testCreate() throws Exception{
@@ -39,6 +43,24 @@ public class DAOTester {
 		
 		dao.read("½Å¶ó¸é");
 		
+	}
+	
+	@Test
+	public void testNCreate()throws Exception{
+		
+		NoodleVO vo = new NoodleVO();
+		
+		vo.setName("test");
+		vo.setCalories(111);
+		vo.setCarbohydrate(111);
+		vo.setProtein(111);
+		vo.setFat(111);
+		vo.setSaturatedFat(111);
+		vo.setTransFat(111);
+		vo.setCholesterol(111);
+		vo.setNatrium(111);
+		
+		ndao.create(vo);
 	}
 	
 	
