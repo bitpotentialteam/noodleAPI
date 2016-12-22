@@ -16,13 +16,5 @@ public interface NoodleDAO {
 	public List<NoodleVO> listSearch(Criteria cri)throws Exception;
 	
 	
-	// brand filter --> brandType = 농심, 삼양, 오뚜기, 팔도
-	
-	// type filter --> 
-
-	// noodleType filter
-	
-	// orderType...
-	
 	
 }
