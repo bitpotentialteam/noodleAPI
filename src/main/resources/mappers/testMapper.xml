@@ -5,11 +5,7 @@
 
 <mapper namespace="org.noodle.mapper.TestMapper">
 
-
-
-	<select id="test" resultType="NoodleVO">
-		select * tbl_noodleapi
-
+<sql id="order">
 
 		<if test="orderType != null">
 			<if test="orderType == 'n'.toString()">
@@ -34,7 +30,11 @@
 				order by rank asc
 			</if>
 		</if>
-
+		
+	</sql>
+		
+	<select id="test" resultType="NoodleVO">
+		select * tbl_noodleapi
 
 	</select>
 

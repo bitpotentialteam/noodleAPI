@@ -23,5 +23,22 @@ select name, brand, thumbnail, weight, soupColor, releaseDate, noodleType,type f
 		name=#{name}, brand=#{brand}, thumbnail=#{thumbnail}, weight=#{weight},
 		soupcolor=#{soupColor}, noodletype=#{noodleType}, type=#{type}
 	</update>
+	
+	<select id="serchList" resultType="NoodleVo">
+	
+		<![CDATA[	select *
+		from (SELECT *
+				FROM (
+		  			SELECT *
+		    		FROM tbl_noodle
+					) noodle
+				where rownum <= 10
+			)
+		where rownum >= 1
+			]]>
+			
+			<!-- 저기 10은 나중에 pagecri 한다음에 바꾸ㅓ주세여~! -->
+	
+	</select>
 
 </mapper>
