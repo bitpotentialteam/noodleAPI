@@ -24,7 +24,7 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home() {
-		logger.info("aipGET.....");
+		logger.info("apiGET.....");
 		
 	
 		
