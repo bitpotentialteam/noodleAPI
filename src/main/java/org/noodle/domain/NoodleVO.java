@@ -11,7 +11,7 @@ public class NoodleVO {
 	private int weight;
 	private String soupColor;
 	private Date regdate;
-	private Date releaseDate;
+	private int releaseDate;
 	private String noodleType;
 	private String type;
 	private Date updatedate;
@@ -79,10 +79,10 @@ public class NoodleVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public Date getReleaseDate() {
+	public int getReleaseDate() {
 		return releaseDate;
 	}
-	public void setReleaseDate(Date releaseDate) {
+	public void setReleaseDate(int releaseDate) {
 		this.releaseDate = releaseDate;
 	}
 	public String getNoodleType() {

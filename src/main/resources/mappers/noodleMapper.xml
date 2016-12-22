@@ -38,6 +38,30 @@ select name, brand, thumbnail, weight, soupColor, releaseDate, noodleType,type f
 			]]>
 			
 			<!-- 저기 10은 나중에 pagecri 한다음에 바꾸ㅓ주세여~! -->
+			
+				<if test="orderType != null">
+			<if test="orderType == 'n'.toString()">
+				order by RELEASEDATE desc
+			</if>
+
+			<if test="orderType == 'nd'.toString()">
+				order by RELEASEDATE asc
+			</if>
+
+			<if test="orderType == 'rk'.toString()">
+				order by calories asc
+			</if>
+
+			<if test="orderType == 'hk'.toString()">
+				order by calories desc
+			</if>
+
+			<if test="orderType == 'r'.toString()">
+				join tbl_rank on tbl_noodleapi.name = tbl_rank.name
+				where year=2015
+				order by rank asc
+			</if>
+		</if>
 	
 	</select>
 
