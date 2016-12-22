@@ -24,7 +24,7 @@ select name, brand, thumbnail, weight, soupColor, releaseDate, noodleType,type f
 		soupcolor=#{soupColor}, noodletype=#{noodleType}, type=#{type}
 	</update>
 	
-	<select id="searchList" resultType="NoodleVo">
+	<select id="listSearch" resultType="NoodleVo">
 	
 		<![CDATA[	select *
 		from (SELECT *
