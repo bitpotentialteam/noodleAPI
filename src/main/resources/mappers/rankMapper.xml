@@ -4,21 +4,71 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.noodle.mapper.RankMapper">
-<insert id="create">
-insert into tbl_rank(name, year, rank)
-values(#{name}, #{year}, #{rank})
-</insert>
-
-<select id="read" resultType="NoodleVO">
-select name, year, rank from tbl_rank where name = #{name}
-</select>
+	<insert id="create">
+		insert into
+			tbl_rank
+			(
+			name,
+			year,
+			rank
+			)
+		values
+			(
+			#{name},
+			#{year},
+			#{rank}
+			)
+	</insert>
+	
+	<select id="read" resultType="NoodleVO">
+		select
+			name, year, rank
+		from
+			tbl_rank
+		where
+			name = #{name}	
+	</select>
 
 	<delete id="delete">
-		delete from tbl_rank where name=#{name}
+		delete from
+			tbl_rank
+		where
+			name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">
-		update tbl_rank set
-		year=#{year}, component=#{component}, time=#{time} where name=#{name}
+		update
+			tbl_rank
+		set
+			year=#{year},
+			component=#{component},
+			time=#{time}
+		where
+			name=#{name}
 	</update>
+	
+	<select id="yearRank">
+		select
+			api.NAME, tbl_rank.YEAR, tbl_rank.RANK
+		from
+			tbl_noodleapi api
+		join
+			tbl_rank
+		on
+			api.name = tbl_rank.name
+		where
+			tbl_rank.YEAR = #{year}
+		order by
+			rank asc
+	</select>
+	
+	<select id="rankAll">
+		select
+			*
+		from
+			tbl_rank
+		order by
+			year desc, rank asc
+	</select>
+	
 </mapper>

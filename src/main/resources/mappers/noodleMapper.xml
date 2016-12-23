@@ -6,27 +6,81 @@
 <mapper namespace="org.noodle.mapper.NoodleMapper">
 
 	<insert id="create">
-		insert into tbl_noodle (name, brand, thumbnail, weight, soupColor, releaseDate, noodleType, type)
-		values(#{name},#{brand},#{thumbnail},#{weight},#{soupColor},#{releaseDate},#{noodleType},#{type})
+		insert into
+			tbl_noodle
+			(
+			name,
+			brand,
+			thumbnail,
+			weight,
+			soupColor,
+			releaseDate,
+			noodleType,
+			type
+			)
+		values
+			(
+			#{name},
+			#{brand},
+			#{thumbnail},
+			#{weight},
+			#{soupColor},
+			#{releaseDate},
+			#{noodleType},
+			#{type}
+			)
 	</insert>
 	
 	<select id="read" resultType="NoodleVO">
-		select name, brand, thumbnail, weight, soupColor, releaseDate, noodleType,type from tbl_noodle where name = #{name}
+		select
+			name,
+			brand,
+			thumbnail,
+			weight,
+			soupColor,
+			releaseDate,
+			noodleType,
+			type
+		from
+			tbl_noodle
+		where
+			name = #{name}
 	</select>
 
 	<delete id="delete">
-		delete from tbl_noodle where name=#{name}
+		delete from
+			tbl_noodle
+		where
+			name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">
-		update tbl_noodle set
-		brand=#{brand}, thumbnail=#{thumbnail}, weight=#{weight},
-		soupcolor=#{soupColor}, noodletype=#{noodleType}, type=#{type} where name=#{name}
+		update
+			tbl_noodle
+		set
+			brand=#{brand},
+			thumbnail=#{thumbnail},
+			weight=#{weight},
+			soupcolor=#{soupColor},
+			noodletype=#{noodleType},
+			type=#{type}
+		where
+			name=#{name}
 	</update>
 	
-	<select id="listSearch" resultType="NoodleVo">
+	<select id="listAll" resultType="NoodleVO">
+		select
+			*
+		from
+			tbl_noodle	
+	</select>
 	
-		select * from tbl_noodle
+	<select id="listSearch" resultType="NoodleVO">
+	
+		select
+			*
+		from
+			tbl_noodle
 		
 			<if test="orderType != null">
 				<if test="orderType == 'n'.toString()">
@@ -46,13 +100,20 @@
 				</if>
 	
 				<if test="orderType == 'r'.toString()">
-					join tbl_rank on tbl_noodleapi.name = tbl_rank.name
-					where year=2015
-					order by rank asc
+					join
+						tbl_rank
+					on
+						tbl_noodleapi.name = tbl_rank.name
+					where
+						year=2015
+					order by
+						rank asc
 				</if>
 			</if>
 	
 	</select>
+
+
 	
 
 </mapper>
