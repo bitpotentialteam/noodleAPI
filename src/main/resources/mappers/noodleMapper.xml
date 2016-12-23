@@ -6,7 +6,7 @@
 <mapper namespace="org.noodle.mapper.NoodleMapper">
 
 	<insert id="create">
-		insert into
+		insert into 
 			tbl_noodleapi
 			(
 				name,
