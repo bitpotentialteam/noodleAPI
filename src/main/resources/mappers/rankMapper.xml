@@ -8,15 +8,15 @@
 		insert into
 			tbl_rank
 			(
-			name,
-			year,
-			rank
+				name,
+				year,
+				rank
 			)
 		values
 			(
-			#{name},
-			#{year},
-			#{rank}
+				#{name},
+				#{year},
+				#{rank}
 			)
 	</insert>
 	
@@ -33,23 +33,25 @@
 		delete from
 			tbl_rank
 		where
-			name=#{name}
+			name = #{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">
 		update
 			tbl_rank
 		set
-			year=#{year},
-			component=#{component},
-			time=#{time}
+			year = #{year},
+			component = #{component},
+			time = #{time}
 		where
-			name=#{name}
+			name = #{name}
 	</update>
 	
 	<select id="yearRank">
 		select
-			api.NAME, tbl_rank.YEAR, tbl_rank.RANK
+			api.NAME,
+			tbl_rank.YEAR,
+			tbl_rank.RANK
 		from
 			tbl_noodleapi api
 		join

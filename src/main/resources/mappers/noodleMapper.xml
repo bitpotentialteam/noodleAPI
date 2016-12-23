@@ -9,25 +9,25 @@
 		insert into
 			tbl_noodle
 			(
-			name,
-			brand,
-			thumbnail,
-			weight,
-			soupColor,
-			releaseDate,
-			noodleType,
-			type
+				name,
+				brand,
+				thumbnail,
+				weight,
+				soupColor,
+				releaseDate,
+				noodleType,
+				type
 			)
 		values
 			(
-			#{name},
-			#{brand},
-			#{thumbnail},
-			#{weight},
-			#{soupColor},
-			#{releaseDate},
-			#{noodleType},
-			#{type}
+				#{name},
+				#{brand},
+				#{thumbnail},
+				#{weight},
+				#{soupColor},
+				#{releaseDate},
+				#{noodleType},
+				#{type}
 			)
 	</insert>
 	
@@ -58,14 +58,14 @@
 		update
 			tbl_noodle
 		set
-			brand=#{brand},
-			thumbnail=#{thumbnail},
-			weight=#{weight},
-			soupcolor=#{soupColor},
-			noodletype=#{noodleType},
-			type=#{type}
+			brand = #{brand},
+			thumbnail = #{thumbnail},
+			weight = #{weight},
+			soupcolor = #{soupColor},
+			noodletype = #{noodleType},
+			type = #{type}
 		where
-			name=#{name}
+			name = #{name}
 	</update>
 	
 	<select id="listAll" resultType="NoodleVO">
