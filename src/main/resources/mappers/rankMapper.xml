@@ -19,6 +19,6 @@ select name, year, rank from tbl_rank where name = #{name}
 	
 	<update id="update" parameterType="NoodleVO">
 		update tbl_rank set
-		name=#{name}, year=#{year}, component=#{component}, time=#{time}
+		year=#{year}, component=#{component}, time=#{time} where name=#{name}
 	</update>
 </mapper>

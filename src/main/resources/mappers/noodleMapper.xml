@@ -20,8 +20,8 @@ select name, brand, thumbnail, weight, soupColor, releaseDate, noodleType,type f
 	
 	<update id="update" parameterType="NoodleVO">
 		update tbl_noodle set
-		name=#{name}, brand=#{brand}, thumbnail=#{thumbnail}, weight=#{weight},
-		soupcolor=#{soupColor}, noodletype=#{noodleType}, type=#{type}
+		brand=#{brand}, thumbnail=#{thumbnail}, weight=#{weight},
+		soupcolor=#{soupColor}, noodletype=#{noodleType}, type=#{type} where name=#{name}
 	</update>
 	
 	<select id="listSearch" resultType="NoodleVo">
