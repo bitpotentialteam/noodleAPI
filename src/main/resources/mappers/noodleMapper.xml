@@ -7,7 +7,7 @@
 
 	<insert id="create">
 		insert into
-			tbl_noodle
+			tbl_noodleapi
 			(
 				name,
 				brand,
@@ -42,21 +42,21 @@
 			noodleType,
 			type
 		from
-			tbl_noodle
+			tbl_noodleapi
 		where
 			name = #{name}
 	</select>
 
 	<delete id="delete">
 		delete from
-			tbl_noodle
+			tbl_noodleapi
 		where
 			name=#{name}
 	</delete>
 	
 	<update id="update" parameterType="NoodleVO">
 		update
-			tbl_noodle
+			tbl_noodleapi
 		set
 			brand = #{brand},
 			thumbnail = #{thumbnail},
@@ -72,7 +72,7 @@
 		select
 			*
 		from
-			tbl_noodle	
+			tbl_noodleapi	
 	</select>
 	
 	<select id="listSearch" resultType="NoodleVO">
@@ -80,8 +80,9 @@
 		select
 			*
 		from
-			tbl_noodle
-		
+			tbl_noodleapi
+			<if test="searchType=! null">
+			</if>
 			<if test="orderType != null">
 				<if test="orderType == 'n'.toString()">
 					order by RELEASEDATE desc

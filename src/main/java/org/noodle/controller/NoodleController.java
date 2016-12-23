@@ -31,7 +31,7 @@ public class NoodleController {
 //	private RankServiceImpl rank;
 	
 	@GetMapping("")
-	public List<NoodleVO> names() throws Exception{
+	public List<NoodleVO> listAll() throws Exception{
 		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
 		Criteria cri = new Criteria();
@@ -40,10 +40,11 @@ public class NoodleController {
 	}
 	
 //	@GetMapping("/{name}")
-//	public List<NoodleVO> names(@PathVariable("name") String name){
+//	public List<NoodleVO> noodleInfo(@PathVariable("name") String name)throws Exception{
 //		
 //		List<NoodleVO> list = new ArrayList<NoodleVO>();
-//		
+//		list = noodle.	
+	
 //		return list;
 //	}
 	
