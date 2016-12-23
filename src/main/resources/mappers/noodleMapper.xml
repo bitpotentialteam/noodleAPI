@@ -114,6 +114,89 @@
 	
 	</select>
 
+<!-- 2016.12.23 개고생(feat.다은포함 승우 준호까지)하며 만들었읍니다. 필터 나빠요,, -->
+
+<select id = "search" resultType="NoodleVO">
+
+	
+		select
+			*
+		from
+			tbl_noodleapi
+		where rownum >= 0
+			
+			<if test = "keyword !=null"> 
+				
+				and name like '%' #{keyword} '%'
+			
+			</if>
+			
+			<if test = "brandType != null" >
+			
+			and brand in
+			
+					  <foreach item="brandType" index="index" collection="list"
+					      open="(" separator="," close=")">
+					        #{brandType}
+					  </foreach>			
+			</if>
+			
+				<if test = "kindType != null" >
+			
+					and kinds in
+					
+					  <foreach item="kindType" index="index" collection="list"
+					      open="(" separator="," close=")">
+					        #{kindType}
+					  </foreach>			
+			</if>
+			
+			<if test = "noodleType != null" >
+			
+				and noodletype in
+				
+					  <foreach item="noodleType" index="index" collection="list"
+					      open="(" separator="," close=")">
+					        #{noodleType}
+					  </foreach>			
+			</if>
+			
+			
+			
+			
+		
+			<if test="orderType != null">
+				<if test="orderType == '최신순'.toString()">
+					order by RELEASEDATE desc
+				</if>
+	
+				<if test="orderType == '오래된순'.toString()">
+					order by RELEASEDATE asc
+				</if>
+	
+				<if test="orderType == '칼로리낮은순'.toString()">
+					order by calories asc
+				</if>
+	
+				<if test="orderType == '칼로리낮은순'.toString()">
+					order by calories desc
+				</if>
+	
+				<if test="orderType == '인기순(2015년기준 10개)'.toString()">
+					join
+						tbl_rank
+					on
+						tbl_noodleapi.name = tbl_rank.name
+					where
+						year=2015
+					order by
+						rank asc
+				</if>
+			</if>
+
+
+
+</select>
 
 	
 
