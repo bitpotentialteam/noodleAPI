@@ -5,13 +5,16 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.noodle.domain.Criteria;
 import org.noodle.domain.NoodleVO;
 import org.noodle.service.NoodleServiceImpl;
 import org.noodle.service.RankServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,19 +26,26 @@ public class NoodleController {
 	
 	@Inject
 	private NoodleServiceImpl noodle;
+//	
+//	@Autowired
+//	private RankServiceImpl rank;
 	
-	@Inject
-	private RankServiceImpl rank;
-	
-	@GetMapping("/test")
-	public List<NoodleVO> test(Model model, NoodleVO vo){
+	@GetMapping("")
+	public List<NoodleVO> names() throws Exception{
+		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
-		for(int i = 0; i < 10; i ++){
-			
-			list.add(vo);
-		}
+		Criteria cri = new Criteria();
+		list = noodle.listSearch(cri);
 		return list;
 	}
+	
+//	@GetMapping("/{name}")
+//	public List<NoodleVO> names(@PathVariable("name") String name){
+//		
+//		List<NoodleVO> list = new ArrayList<NoodleVO>();
+//		
+//		return list;
+//	}
 	
 	
 //	@GetMapping("/{name}")
