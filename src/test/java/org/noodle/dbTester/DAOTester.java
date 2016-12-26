@@ -54,7 +54,7 @@ public class DAOTester {
 		dao.create(vo);
 		System.out.println(vo.getReleaseDate());
 		
-	}
+	} 
 	@Test
 	public void readTest()throws Exception{
 		dao.read("test");
