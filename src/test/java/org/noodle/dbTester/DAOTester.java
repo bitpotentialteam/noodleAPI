@@ -64,6 +64,14 @@ public class DAOTester {
 	public void deleteTest()throws Exception{
 		dao.delete("test");
 	}
+	@Test
+	public void listTest()throws Exception{
+		List<NoodleVO> listAll = dao.listAll();
+		
+		for (NoodleVO noodleVO : listAll) {
+			System.out.println(noodleVO.getName()+":"+noodleVO.getBrand());
+		}
+	}
 	
 
 	
@@ -89,5 +97,6 @@ public class DAOTester {
 		System.out.println(list);
 		
 	}
+	
 	
 }
