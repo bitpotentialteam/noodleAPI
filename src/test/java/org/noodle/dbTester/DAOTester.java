@@ -103,12 +103,12 @@ public class DAOTester {
 	public void brandTest()throws Exception{
 		
 		Criteria cri = new Criteria();
-		List<String> list = new ArrayList<String>();
 		
-		list.add("삼양");
-		list.add("농심");
+		String[] list1 = {"생면","건면"};
 		
-		cri.setBrandFilter(list);
+	
+		cri.setNoodleTypeFilter(list1);
+		cri.setOrderType("최신순");
 		System.out.println(cri.toString());
 		
 		List<NoodleVO> result = dao.search(cri);
