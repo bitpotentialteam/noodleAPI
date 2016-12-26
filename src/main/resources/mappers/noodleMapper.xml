@@ -6,41 +6,16 @@
 <mapper namespace="org.noodle.mapper.NoodleMapper">
 
 	<insert id="create">
-		insert into 
-			tbl_noodleapi
-			(
-				name,
-				brand,
-				thumbnail,
-				weight,
-				soupColor,
-				releaseDate,
-				noodleType,
-				type
-			) 
-		values
-			(
-				#{name},
-				#{brand},
-				#{thumbnail},
-				#{weight},
-				#{soupColor},
-				#{releaseDate},
-				#{noodleType},
-				#{type}
-			)
+
+		insert into tbl_noodleapi (name, brand, releaseDate, weight, soupColor, noodleType, kinds, calories, carbohydrate, protein, fat, saturatedFat, transFat, cholesterol, natrium, material_noodle, material_powder,thumbnail)
+		values(#{name},#{brand},#{releaseDate},#{weight},#{soupColor},#{noodleType},#{kinds},#{calories},#{carbohydrate},#{protein},#{fat},#{saturatedFat},#{transFat},#{cholesterol},#{natrium},#{material_noodle},#{material_powder},#{thumbnail})
+
+	
 	</insert>
 	
 	<select id="read" resultType="NoodleVO">
 		select
-			name,
-			brand,
-			thumbnail,
-			weight,
-			soupColor,
-			releaseDate,
-			noodleType,
-			type
+			name,brand,releaseDate,thumbnail,weight,soupColor,noodleType,kinds,calories
 		from
 			tbl_noodleapi
 		where
