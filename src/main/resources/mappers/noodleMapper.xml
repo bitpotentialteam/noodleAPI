@@ -53,6 +53,15 @@
 		from
 			tbl_noodleapi
 	</select>
+	
+	<select id="readBrand" resultType="NoodleVO">
+	
+			select name, thumbnail, brand
+		from tbl_noodleapi
+		where brand = #{brand}
+	
+	
+	</select>
 
 	<!-- 2016.12.23 개고생(feat.다은포함 승우 준호까지)하며 만들었읍니다. 필터 나빠요,, -->
 
@@ -65,7 +74,7 @@
 			rownum >= 0
 
 		<if test="keyword !=null">
-			and name like '%' #{keyword} '%'
+			and name like '%'#{keyword}'%'
 		</if>
 
 		<if test="brandFilter != null">

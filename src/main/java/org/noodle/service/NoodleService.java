@@ -13,6 +13,7 @@ public interface NoodleService {
 	public void remove(String name)throws Exception;
 	public List<NoodleVO> listAll()throws Exception;
 	public List<NoodleVO> search(Criteria cri)throws Exception;
+	public List<NoodleVO> readBrand(String brand)throws Exception;
 	
 
 	

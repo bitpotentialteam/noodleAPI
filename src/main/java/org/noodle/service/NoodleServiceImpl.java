@@ -54,5 +54,11 @@ public class NoodleServiceImpl implements NoodleService {
 		return dao.search(cri);
 	}
 
+	@Override
+	public List<NoodleVO> readBrand(String brand) throws Exception {
+
+		return dao.readBrand(brand);
+	}
+
 
 }
