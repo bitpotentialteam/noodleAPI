@@ -54,6 +54,12 @@ public class NoodleDAOImpl implements NoodleDAO {
 		return session.selectList(namespace+".search",cri);
 	}
 
+	@Override
+	public List<NoodleVO> readBrand(String brand) throws Exception {
+
+		return session.selectList(namespace + ".readBrand",brand);
+	}
+
 
 
 }

@@ -40,20 +40,21 @@ public class NoodleController {
 	}
 	
 	@GetMapping("/{name}")
-	public List<NoodleVO> getNoodleInfo(@PathVariable("name") String name)throws Exception{
+	public NoodleVO getNoodleInfo(@PathVariable("name") String name)throws Exception{
 		
-		List<NoodleVO> list = new ArrayList<NoodleVO>();
-		//list = noodle.	
-	
-		return list;
+		
+		return noodle.read(name);
+		
+		
 	}
 	
 	@GetMapping("/brands/{brand}")
 	public List<NoodleVO> getBrandInfo(@PathVariable("brand") String brand)throws Exception{
 		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
-		//list = noodle.();	
 	
+		list = noodle.readBrand(brand);
+		
 		return list;
 	}                                                  
 	
