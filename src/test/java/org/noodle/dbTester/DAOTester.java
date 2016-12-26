@@ -82,7 +82,7 @@ public class DAOTester {
 		Criteria cri = new Criteria();
 		cri.setOrderType("n");
 		
-		List<NoodleVO> list = dao.listSearch(cri);
+		List<NoodleVO> list = dao.search(cri);
 		System.out.println(list);
 	} 
 	
