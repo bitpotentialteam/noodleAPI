@@ -15,14 +15,7 @@
 	
 	<select id="read" resultType="NoodleVO">
 		select
-			name,
-			brand,
-			thumbnail,
-			weight,
-			soupColor,
-			releaseDate,
-			noodleType,
-			type
+			name,brand,releaseDate,thumbnail,weight,soupColor,noodleType,kinds,calories
 		from
 			tbl_noodleapi
 		where

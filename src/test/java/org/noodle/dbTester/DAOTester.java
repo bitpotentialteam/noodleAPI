@@ -55,6 +55,15 @@ public class DAOTester {
 		System.out.println(vo.getReleaseDate());
 		
 	}
+	@Test
+	public void readTest()throws Exception{
+		dao.read("test");
+		System.out.println(dao.read("test"));
+	}
+	@Test
+	public void deleteTest()throws Exception{
+		dao.delete("test");
+	}
 	
 
 	
