@@ -55,15 +55,15 @@ public class NoodleDAOImpl implements NoodleDAO {
 	}
 
 	@Override
-	public List<NoodleVO> branFilter(Criteria cri) throws Exception {
+	public List<NoodleVO> brandFilter(Criteria cri) throws Exception {
 
 		return session.selectList(namespace+".brandFilter",cri);
 	}
 
 	@Override
-	public List<NoodleVO> typeFilter(Criteria cri) throws Exception {
+	public List<NoodleVO> kindFilter(Criteria cri) throws Exception {
 
-		return session.selectList(namespace+".typeFilter",cri);
+		return session.selectList(namespace+".kindFilter",cri);
 	}
 
 	@Override

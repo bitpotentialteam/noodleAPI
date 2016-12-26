@@ -1,5 +1,7 @@
 package org.noodle.domain;
 
+import java.util.Arrays;
+
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -9,9 +11,11 @@ public class Criteria {
 	private String searchType;
 	private String keyword;
 	
-	private String brandFilter;
-	private String typeFilter;
-	private String noodleTypeFilter;
+	private String[] brandFilter;
+	private String[] kindFilter;
+	private String[] noodleTypeFilter;
+	
+	
 	
 	private String orderType;
 	
@@ -20,7 +24,8 @@ public class Criteria {
 		UriComponents uriComponents = UriComponentsBuilder.newInstance()
 				.queryParam("keyword", keyword)
 				.queryParam("brandFilter", brandFilter)
-				.queryParam("typeFilter", typeFilter)
+				.queryParam("kindFilter", kindFilter)
+				.queryParam("noodleTypeFilter", noodleTypeFilter)
 				.queryParam("orderType", orderType)
 				.build();
 		return uriComponents.toUriString();
@@ -43,27 +48,27 @@ public class Criteria {
 		this.keyword = keyword;
 	}
 
-	public String getBrandFilter() {
+	public String[] getBrandFilter() {
 		return brandFilter;
 	}
 
-	public void setBrandFilter(String brandFilter) {
+	public void setBrandFilter(String[] brandFilter) {
 		this.brandFilter = brandFilter;
 	}
 
-	public String getTypeFilter() {
-		return typeFilter;
+	public String[] getKindFilter() {
+		return kindFilter;
 	}
 
-	public void setTypeFilter(String typeFilter) {
-		this.typeFilter = typeFilter;
+	public void setKindFilter(String[] kindFilter) {
+		this.kindFilter = kindFilter;
 	}
 
-	public String getNoodleTypeFilter() {
+	public String[] getNoodleTypeFilter() {
 		return noodleTypeFilter;
 	}
 
-	public void setNoodleTypeFilter(String noodleTypeFilter) {
+	public void setNoodleTypeFilter(String[] noodleTypeFilter) {
 		this.noodleTypeFilter = noodleTypeFilter;
 	}
 
@@ -77,10 +82,12 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [searchType=" + searchType + ", keyword=" + keyword + ", brandFilter=" + brandFilter
-				+ ", typefilter=" + typeFilter + ", noodleTypeFilter=" + noodleTypeFilter + ", orderType=" + orderType
-				+ "]";
+		return "Criteria [searchType=" + searchType + ", keyword=" + keyword + ", brandFilter="
+				+ Arrays.toString(brandFilter) + ", kindFilter=" + Arrays.toString(kindFilter) + ", noodleTypeFilter="
+				+ Arrays.toString(noodleTypeFilter) + ", orderType=" + orderType + "]";
 	}
+
+	
 	
 	
 }

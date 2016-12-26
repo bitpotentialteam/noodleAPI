@@ -14,8 +14,8 @@ public interface NoodleService {
 	public List<NoodleVO> listAll()throws Exception;
 	public List<NoodleVO> listSearch(Criteria cri)throws Exception;
 	
-	public List<NoodleVO> branFilter(Criteria cri)throws Exception;
-	public List<NoodleVO> typeFilter(Criteria cri)throws Exception;
+	public List<NoodleVO> brandFilter(Criteria cri)throws Exception;
+	public List<NoodleVO> kindFilter(Criteria cri)throws Exception;
 	public List<NoodleVO> noodleTypeFilter(Criteria cri)throws Exception;
 	public List<NoodleVO> orderType(Criteria cri)throws Exception;
 	

@@ -55,15 +55,15 @@ public class NoodleServiceImpl implements NoodleService {
 	}
 	
 	@Override
-	public List<NoodleVO> branFilter(Criteria cri) throws Exception {
+	public List<NoodleVO> brandFilter(Criteria cri) throws Exception {
 
-		return dao.branFilter(cri);
+		return dao.brandFilter(cri);
 	}
 
 	@Override
-	public List<NoodleVO> typeFilter(Criteria cri) throws Exception {
+	public List<NoodleVO> kindFilter(Criteria cri) throws Exception {
 
-		return dao.typeFilter(cri);
+		return dao.kindFilter(cri);
 	}
 
 	@Override
