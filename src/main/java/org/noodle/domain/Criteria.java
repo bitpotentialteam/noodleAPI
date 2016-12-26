@@ -1,7 +1,6 @@
 package org.noodle.domain;
 
 import java.util.Arrays;
-import java.util.List;
 
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -16,24 +15,21 @@ public class Criteria {
 	private String[] kindFilter;
 	private String[] noodleTypeFilter;
 	
-	
-	
 	private String orderType;
+	
 	
 	public String makeQuery(Criteria cri){
 		
 		UriComponents uriComponents = UriComponentsBuilder.newInstance()
 				.queryParam("keyword", keyword)
-				.queryParam("brandFilter", brandFilter)
-				.queryParam("kindFilter", kindFilter)
-				.queryParam("noodleTypeFilter", noodleTypeFilter)
+				.queryParam("brandFilter", brandFilter.toString())
+				.queryParam("kindFilter", kindFilter.toString())
+				.queryParam("noodleTypeFilter", noodleTypeFilter.toString())
 				.queryParam("orderType", orderType)
 				.build();
 		return uriComponents.toUriString();
 		
 	}
-	
-	
 	
 
 	public String getSearchType() {
