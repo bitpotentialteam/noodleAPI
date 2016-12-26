@@ -53,7 +53,7 @@
 
 <!-- 2016.12.23 개고생(feat.다은포함 승우 준호까지)하며 만들었읍니다. 필터 나빠요,, -->
 
-<select id = "search" resultType="NoodleVO">
+<select id = "search" parameterType="Criteria" resultType="NoodleVO">
 
 	
 		select
@@ -62,39 +62,41 @@
 			tbl_noodleapi
 		where rownum >= 0
 			
+			
 			<if test = "keyword !=null"> 
 				
 				and name like '%' #{keyword} '%'
 			
 			</if>
 			
-			<if test = "brandType != null" >
+			
+			<if test = "brandFilter != null" >
 			
 			and brand in
 			
-					  <foreach item="brandType" index="index" collection="list"
+					  <foreach item="brandFilter" index="index" collection="brandFilter"
 					      open="(" separator="," close=")">
-					        #{brandType}
+					        #{brandFilter}
 					  </foreach>			
 			</if>
 			
-				<if test = "kindType != null" >
+			<if test = "kindFilter != null" >
 			
 					and kinds in
 					
-					  <foreach item="kindType" index="index" collection="list"
+					  <foreach item="kindFilter" index="index" collection="kindFilter"
 					      open="(" separator="," close=")">
-					        #{kindType}
+					        #{kindFilter}
 					  </foreach>			
 			</if>
 			
-			<if test = "noodleType != null" >
+			<if test = "noodleTypeFilter != null" >
 			
-				and noodletype in
+				and noodleType in
 				
-					  <foreach item="noodleType" index="index" collection="list"
+					  <foreach item="noodleTypeFilter" index="index" collection="noodleTypeFilter"
 					      open="(" separator="," close=")">
-					        #{noodleType}
+					        #{noodleTypeFilter}
 					  </foreach>			
 			</if>
 			
@@ -130,8 +132,6 @@
 						rank asc
 				</if>
 			</if>
-
-
 
 </select>
 

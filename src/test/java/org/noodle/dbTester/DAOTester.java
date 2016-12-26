@@ -1,5 +1,6 @@
 package org.noodle.dbTester;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -96,6 +97,22 @@ public class DAOTester {
 		List<NoodleVO> list = tdao.orderTest(cri);
 		System.out.println(list);
 		
+	}
+	
+	@Test
+	public void brandTest()throws Exception{
+		
+		Criteria cri = new Criteria();
+		List<String> list = new ArrayList<String>();
+		
+		list.add("삼양");
+		list.add("농심");
+		
+		cri.setBrandFilter(list);
+		System.out.println(cri.toString());
+		
+		List<NoodleVO> result = dao.search(cri);
+		System.out.println(result);
 	}
 	
 	

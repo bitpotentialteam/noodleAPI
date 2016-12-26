@@ -1,6 +1,7 @@
 package org.noodle.domain;
 
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -11,7 +12,7 @@ public class Criteria {
 	private String searchType;
 	private String keyword;
 	
-	private String[] brandFilter;
+	private List<String> brandFilter;
 	private String[] kindFilter;
 	private String[] noodleTypeFilter;
 	
@@ -48,11 +49,11 @@ public class Criteria {
 		this.keyword = keyword;
 	}
 
-	public String[] getBrandFilter() {
+	public List<String> getBrandFilter() {
 		return brandFilter;
 	}
 
-	public void setBrandFilter(String[] brandFilter) {
+	public void setBrandFilter(List<String> brandFilter) {
 		this.brandFilter = brandFilter;
 	}
 
@@ -82,13 +83,10 @@ public class Criteria {
 
 	@Override
 	public String toString() {
-		return "Criteria [searchType=" + searchType + ", keyword=" + keyword + ", brandFilter="
-				+ Arrays.toString(brandFilter) + ", kindFilter=" + Arrays.toString(kindFilter) + ", noodleTypeFilter="
+		return "Criteria [searchType=" + searchType + ", keyword=" + keyword + ", brandFilter=" + brandFilter
+				+ ", kindFilter=" + Arrays.toString(kindFilter) + ", noodleTypeFilter="
 				+ Arrays.toString(noodleTypeFilter) + ", orderType=" + orderType + "]";
 	}
 
-	
-	
-	
 	
 }
