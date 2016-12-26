@@ -19,7 +19,7 @@
 		from
 			tbl_noodleapi
 		where
-			name = #{name}
+			name = #{name} 
 	</select>
 
 	<delete id="delete">

@@ -65,7 +65,7 @@ public class DAOTester {
 		dao.delete("test");
 	}
 	@Test
-	public void listTest()throws Exception{
+	public void listTest()throws Exception{ 
 		List<NoodleVO> listAll = dao.listAll();
 		
 		for (NoodleVO noodleVO : listAll) {
