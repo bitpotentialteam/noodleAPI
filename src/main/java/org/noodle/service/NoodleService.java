@@ -12,11 +12,8 @@ public interface NoodleService {
 	public void modify(NoodleVO vo)throws Exception;
 	public void remove(String name)throws Exception;
 	public List<NoodleVO> listAll()throws Exception;
-	public List<NoodleVO> listSearch(Criteria cri)throws Exception;
+	public List<NoodleVO> search(Criteria cri)throws Exception;
 	
-	public List<NoodleVO> brandFilter(Criteria cri)throws Exception;
-	public List<NoodleVO> kindFilter(Criteria cri)throws Exception;
-	public List<NoodleVO> noodleTypeFilter(Criteria cri)throws Exception;
-	public List<NoodleVO> orderType(Criteria cri)throws Exception;
+
 	
 }

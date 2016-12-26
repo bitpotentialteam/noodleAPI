@@ -49,33 +49,11 @@ public class NoodleDAOImpl implements NoodleDAO {
 	}
 
 	@Override
-	public List<NoodleVO> listSearch(Criteria cri) throws Exception {
+	public List<NoodleVO> search(Criteria cri) throws Exception {
 
-		return session.selectList(namespace+".listSearch",cri);
+		return session.selectList(namespace+".search",cri);
 	}
 
-	@Override
-	public List<NoodleVO> brandFilter(Criteria cri) throws Exception {
 
-		return session.selectList(namespace+".brandFilter",cri);
-	}
-
-	@Override
-	public List<NoodleVO> kindFilter(Criteria cri) throws Exception {
-
-		return session.selectList(namespace+".kindFilter",cri);
-	}
-
-	@Override
-	public List<NoodleVO> noodleTypeFilter(Criteria cri) throws Exception {
-
-		return session.selectList(namespace+".noodleTypeFilter",cri);
-	}
-
-	@Override
-	public List<NoodleVO> orderType(Criteria cri) throws Exception {
-
-		return session.selectList(namespace+".orderType",cri);
-	}
 
 }

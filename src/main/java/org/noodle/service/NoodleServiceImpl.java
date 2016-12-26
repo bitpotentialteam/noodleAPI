@@ -49,33 +49,10 @@ public class NoodleServiceImpl implements NoodleService {
 	}
 
 	@Override
-	public List<NoodleVO> listSearch(Criteria cri) throws Exception {
+	public List<NoodleVO> search(Criteria cri) throws Exception {
 
-		return dao.listSearch(cri);
-	}
-	
-	@Override
-	public List<NoodleVO> brandFilter(Criteria cri) throws Exception {
-
-		return dao.brandFilter(cri);
+		return dao.search(cri);
 	}
 
-	@Override
-	public List<NoodleVO> kindFilter(Criteria cri) throws Exception {
-
-		return dao.kindFilter(cri);
-	}
-
-	@Override
-	public List<NoodleVO> noodleTypeFilter(Criteria cri) throws Exception {
-
-		return dao.noodleTypeFilter(cri);
-	}
-
-	@Override
-	public List<NoodleVO> orderType(Criteria cri) throws Exception {
-
-		return dao.orderType(cri);
-	}
 
 }

@@ -35,7 +35,7 @@ public class NoodleController {
 		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
 		Criteria cri = new Criteria();
-		list = noodle.listSearch(cri);
+		list = noodle.search(cri);
 		return list;
 	}
 	
