@@ -7,13 +7,13 @@ public class NoodleVO {
 	// tbl_noodle
 	private String name;
 	private String brand;
-	private String thumbnail;
+	private Date releaseDate;
 	private int weight;
+	private String thumbnail;
 	private String soupColor;
-	private Date regdate;
-	private int releaseDate;
 	private String noodleType;
-	private String type;
+	private String kinds;
+	private Date regdate;
 	private Date updatedate;
 	
 	// tbl_nutrition
@@ -41,11 +41,11 @@ public class NoodleVO {
 	public void setBrand(String brand) {
 		this.brand = brand;
 	}
-	public String getThumbnail() {
-		return thumbnail;
+	public Date getReleaseDate() {
+		return releaseDate;
 	}
-	public void setThumbnail(String thumbnail) {
-		this.thumbnail = thumbnail;
+	public void setReleaseDate(Date releaseDate) {
+		this.releaseDate = releaseDate;
 	}
 	public int getWeight() {
 		return weight;
@@ -53,23 +53,17 @@ public class NoodleVO {
 	public void setWeight(int weight) {
 		this.weight = weight;
 	}
+	public String getThumbnail() {
+		return thumbnail;
+	}
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
 	public String getSoupColor() {
 		return soupColor;
 	}
 	public void setSoupColor(String soupColor) {
 		this.soupColor = soupColor;
-	}
-	public Date getRegdate() {
-		return regdate;
-	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
-	}
-	public int getReleaseDate() {
-		return releaseDate;
-	}
-	public void setReleaseDate(int releaseDate) {
-		this.releaseDate = releaseDate;
 	}
 	public String getNoodleType() {
 		return noodleType;
@@ -77,11 +71,17 @@ public class NoodleVO {
 	public void setNoodleType(String noodleType) {
 		this.noodleType = noodleType;
 	}
-	public String getType() {
-		return type;
+	public String getKinds() {
+		return kinds;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setKinds(String kinds) {
+		this.kinds = kinds;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
 	public Date getUpdatedate() {
 		return updatedate;
@@ -151,14 +151,15 @@ public class NoodleVO {
 	}
 	@Override
 	public String toString() {
-		return "NoodleVO [name=" + name + ", brand=" + brand + ", thumbnail=" + thumbnail + ", weight=" + weight
-				+ ", soupColor=" + soupColor + ", regdate=" + regdate + ", releaseDate=" + releaseDate + ", noodleType="
-				+ noodleType + ", type=" + type + ", updatedate=" + updatedate + ", calories=" + calories
+		return "NoodleVO [name=" + name + ", brand=" + brand + ", releaseDate=" + releaseDate + ", weight=" + weight
+				+ ", thumbnail=" + thumbnail + ", soupColor=" + soupColor + ", noodleType=" + noodleType + ", kinds="
+				+ kinds + ", regdate=" + regdate + ", updatedate=" + updatedate + ", calories=" + calories
 				+ ", carbohydrate=" + carbohydrate + ", protein=" + protein + ", fat=" + fat + ", saturatedFat="
 				+ saturatedFat + ", transFat=" + transFat + ", cholesterol=" + cholesterol + ", natrium=" + natrium
 				+ ", material_noodle=" + material_noodle + ", material_powder=" + material_powder + "]";
 	}
 
+	
 	
 
 	

@@ -1,5 +1,6 @@
 package org.noodle.dbTester;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -9,7 +10,6 @@ import org.junit.runner.RunWith;
 import org.noodle.domain.Criteria;
 import org.noodle.domain.NoodleVO;
 import org.noodle.persistence.NoodleDAO;
-
 import org.noodle.persistence.TestDAO;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -32,13 +32,27 @@ public class DAOTester {
 		
 		vo.setName("test");
 		vo.setBrand("test");
-		vo.setThumbnail("test");
+		
+		vo.setReleaseDate(new Date());
 		vo.setWeight(123);
 		vo.setSoupColor("test");
 		vo.setNoodleType("test");
-		vo.setType("test");
+		vo.setKinds("test");
+		vo.setCalories(111);
+		vo.setCarbohydrate(111);
+		vo.setProtein(111);
+		vo.setFat(111);
+		vo.setSaturatedFat(111);
+		vo.setTransFat(111);
+		vo.setCholesterol(111);
+		vo.setNatrium(111);
+		vo.setMaterial_noodle("test");
+		vo.setMaterial_powder("test");
+		vo.setThumbnail("test");
+	
 		
 		dao.create(vo);
+		System.out.println(vo.getReleaseDate());
 		
 	}
 	
