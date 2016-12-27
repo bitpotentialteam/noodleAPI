@@ -27,9 +27,6 @@ public class NoodleController {
 	
 	@Inject
 	private NoodleServiceImpl noodle;
-//	
-//	@Autowired
-//	private RankServiceImpl rank;
 	
 	@GetMapping("")
 	public List<NoodleVO> NoodlesAll() throws Exception{
@@ -43,14 +40,14 @@ public class NoodleController {
 	}
 	
 	@GetMapping("/{name}")
-	public List<NoodleVO> getNoodleInfo(@PathVariable("name") String name)throws Exception{
+	public NoodleVO getNoodleInfo(@PathVariable("name") String name)throws Exception{
 		
 		logger.info("noodle info called..." + name);
 		
-		List<NoodleVO> list = new ArrayList<NoodleVO>();
-		//list = noodle.se	
+		NoodleVO vo = new NoodleVO();
+		vo = noodle.read(name);	
 	
-		return list;
+		return vo;
 	}
 	
 	@GetMapping("/brands/{brand}")
@@ -63,30 +60,7 @@ public class NoodleController {
 	
 		return list;
 	}       
-	
-	@GetMapping("/rank")
-	public List<NoodleVO> getRank()throws Exception{
-		
-		logger.info("rank called...");
-		
-		List<NoodleVO> list = new ArrayList<NoodleVO>();
-	
-		list = noodle.rankList();
-		
-		return list;
-	} 
-	
-	@GetMapping("/rank/{year}")
-	public List<NoodleVO> getReadRank(@PathVariable("year") int year)throws Exception{
-		
-		logger.info("rank/year called..." + year);
-		
-		List<NoodleVO> list = new ArrayList<NoodleVO>();
-	
-		list = noodle.readRank(year);
-		
-		return list;
-	} 
+	 
 	
 	@GetMapping("/search")
 	public List<NoodleVO> search(@ModelAttribute("cri") Criteria cri)throws Exception{
