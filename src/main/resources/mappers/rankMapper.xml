@@ -20,7 +20,7 @@
 			)
 	</insert>
 	
-	<select id="read" resultType="NoodleVO">
+	<select id="read" resultType="rankVO">
 		select
 			name, year, rank
 		from
@@ -36,7 +36,7 @@
 			name = #{name}
 	</delete>
 	
-	<update id="update" parameterType="NoodleVO">
+	<update id="update" parameterType="rankVO">
 		update
 			tbl_rank
 		set
@@ -47,7 +47,7 @@
 			name = #{name}
 	</update>
 	
-	<select id="yearRank">
+	<select id="yearRank" resultType="rankVO">
 		select
 			api.NAME,
 			tbl_rank.YEAR,
@@ -64,7 +64,7 @@
 			rank asc
 	</select>
 	
-	<select id="rankAll">
+	<select id="rankAll" resultType="rankVO">
 		select
 			*
 		from

@@ -39,16 +39,17 @@ public class RankServiceImpl implements RankService {
 		dao.delete(name);
 	}
 
-	@Override
-	public List<RankVO> listAll() throws Exception {
 
-		return dao.listAll();
+	@Override
+	public List<RankVO> yearRank(int year) throws Exception {
+		
+		return dao.yearRank(year);
 	}
 
 	@Override
-	public List<RankVO> listSearch(Criteria cri) throws Exception {
-
-		return dao.listSearch(cri);
+	public List<RankVO> rankAll() throws Exception {
+	
+		return dao.rankAll();
 	}
 
 }

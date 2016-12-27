@@ -1,6 +1,5 @@
 package org.noodle.dbTester;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,8 +9,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.noodle.domain.Criteria;
 import org.noodle.domain.NoodleVO;
+import org.noodle.domain.RankVO;
 import org.noodle.persistence.NoodleDAO;
 import org.noodle.persistence.TestDAO;
+import org.noodle.service.RankService;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -21,6 +22,9 @@ public class DAOTester {
 
 	@Inject
 	private NoodleDAO dao;
+	
+	@Inject
+	private RankService rank;
 
 	@Inject
 	private TestDAO tdao;
@@ -115,10 +119,21 @@ public class DAOTester {
 		System.out.println(result);
 	}
 	
+	
 	@Test
-	public void nameTest()throws Exception{
-		Criteria cri = new Criteria();
+	public void rankTest()throws Exception{
 		
+		List<RankVO> list = rank.rankAll();
+		System.out.println(list);
+		
+	}
+	
+	@Test
+	public void yearRankTest()throws Exception{
+		
+		
+		List<RankVO> list = rank.yearRank(2012);
+		System.out.println(list);
 	}
 	
 }

@@ -62,25 +62,7 @@
 	
 	
 	</select>
-	
-	<select id="rankList" resultType="NoodleVO">
-	
-			select tbl_rank.year, tbl_rank.rank, tbl_noodleapi.name, tbl_noodleapi.thumbnail, tbl_noodleapi.brand
-		from tbl_noodleapi
-		join tbl_rank on tbl_rank.name = tbl_noodleapi.name
-		order by year asc , rank asc
-	
-	</select>
-	
-		<select id="readRank" resultType="NoodleVO">
-				
-						select tbl_rank.year, tbl_rank.rank, tbl_noodleapi.name, tbl_noodleapi.thumbnail, tbl_noodleapi.brand
-			from tbl_noodleapi
-			join tbl_rank on tbl_rank.name = tbl_noodleapi.name
-			where year = #{yaer}
-			order by rank asc
-	
-	</select>
+
 
 	<!-- 2016.12.23 개고생(feat.다은포함 승우 준호까지)하며 만들었읍니다. 필터 나빠요,, -->
 

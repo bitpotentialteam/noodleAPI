@@ -43,16 +43,17 @@ public class RankDAOImpl implements RankDAO {
 		session.delete(namespace+".delete",name);
 	}
 
-	@Override
-	public List<RankVO> listAll() throws Exception {
 
-		return session.selectList(namespace+".listAll");
+	@Override
+	public List<RankVO> yearRank(int year) throws Exception {
+		
+		return session.selectList(namespace+".yearRank",year);
 	}
 
 	@Override
-	public List<RankVO> listSearch(Criteria cri) throws Exception {
+	public List<RankVO> rankAll() throws Exception {
 
-		return session.selectList(namespace+".listSearch",cri);
+		return session.selectList(namespace+".rankAll");
 	}
 
 }
