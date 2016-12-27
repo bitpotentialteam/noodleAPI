@@ -31,7 +31,7 @@ public class RankController {
 		
 		List<RankVO> list = new ArrayList<RankVO>();
 	
-		//list = rank.listAll();
+		list = rank.rankAll();
 		
 		return list;
 	} 
@@ -43,7 +43,7 @@ public class RankController {
 		
 		List<RankVO> list = new ArrayList<RankVO>();
 	
-	//	list = rank.listSearch(cri);
+		list = rank.yearRank(year);
 		
 		return list;
 	}
