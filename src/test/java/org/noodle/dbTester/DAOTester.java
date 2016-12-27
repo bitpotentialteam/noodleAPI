@@ -115,5 +115,10 @@ public class DAOTester {
 		System.out.println(result);
 	}
 	
+	@Test
+	public void nameTest()throws Exception{
+		Criteria cri = new Criteria();
+		
+	}
 	
 }
