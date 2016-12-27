@@ -75,10 +75,10 @@
 			rownum >= 0
 
 		<if test="keyword !=null">
-			and name like '%'#{keyword}'%'
+			and name like '%'||#{keyword}||'%'
 		</if>
 
-		<if test="brandFilter != null">
+		<if test="brandFilter != n">
 			and brand in
 
 			<foreach item="brandFilter" index="index" collection="brandFilter"
@@ -87,7 +87,7 @@
 			</foreach>
 		</if>
 
-		<if test="kindFilter != null">
+		<if test="kindFilter != n">
 			and kinds in
 
 			<foreach item="kindFilter" index="index" collection="kindFilter"
@@ -96,7 +96,7 @@
 			</foreach>
 		</if>
 
-		<if test="noodleTypeFilter != null">
+		<if test="noodleTypeFilter != n">
 			and noodleType in
 
 			<foreach item="noodleTypeFilter" index="index" collection="noodleTypeFilter"
@@ -105,24 +105,24 @@
 			</foreach>
 		</if>
 
-		<if test="orderType != null">
-			<if test="orderType == '최신순'.toString()">
+		<if test="orderType != n">
+			<if test="orderType == 'new'.toString()">
 				order by RELEASEDATE desc
 			</if>
 
-			<if test="orderType == '오래된순'.toString()">
+			<if test="orderType == 'old'.toString()">
 				order by RELEASEDATE asc
 			</if>
 
-			<if test="orderType == '칼로리낮은순'.toString()">
+			<if test="orderType == 'lkcal'.toString()">
 				order by calories asc
 			</if>
 
-			<if test="orderType == '칼로리낮은순'.toString()">
+			<if test="orderType == 'hkcal'.toString()">
 				order by calories desc
 			</if>
 
-			<if test="orderType == '인기순(2015년기준 10개)'.toString()">
+			<if test="orderType == 'rank'.toString()">
 				join
 					tbl_rank
 				on
