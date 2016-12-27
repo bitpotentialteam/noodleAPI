@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/noodles/*")
 public class NoodleController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+	private static final Logger logger = LoggerFactory.getLogger(NoodleController.class);
 	
 	@Inject
 	private NoodleServiceImpl noodle;
@@ -71,7 +71,7 @@ public class NoodleController {
 		
 		list = noodle.search(cri);
 		
-		return list;
+		return list; 
 	}
 	
 	
