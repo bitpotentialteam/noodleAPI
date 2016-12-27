@@ -78,7 +78,7 @@
 			and name like '%'||#{keyword}||'%'
 		</if>
 
-		<if test="brandFilter != n">
+		<if test="brandFilter != null">
 			and brand in
 
 			<foreach item="brandFilter" index="index" collection="brandFilter"
@@ -87,7 +87,7 @@
 			</foreach>
 		</if>
 
-		<if test="kindFilter != n">
+		<if test="kindFilter != null">
 			and kinds in
 
 			<foreach item="kindFilter" index="index" collection="kindFilter"
@@ -96,7 +96,7 @@
 			</foreach>
 		</if>
 
-		<if test="noodleTypeFilter != n">
+		<if test="noodleTypeFilter != null">
 			and noodleType in
 
 			<foreach item="noodleTypeFilter" index="index" collection="noodleTypeFilter"
@@ -105,7 +105,7 @@
 			</foreach>
 		</if>
 
-		<if test="orderType != n">
+		<if test="orderType != null">
 			<if test="orderType == 'new'.toString()">
 				order by RELEASEDATE desc
 			</if>
