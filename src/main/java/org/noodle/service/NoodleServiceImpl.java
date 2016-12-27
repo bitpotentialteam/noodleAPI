@@ -60,5 +60,17 @@ public class NoodleServiceImpl implements NoodleService {
 		return dao.readBrand(brand);
 	}
 
+	@Override
+	public List<NoodleVO> rankList() throws Exception {
+		
+		return dao.rankList();
+	}
+
+	@Override
+	public List<NoodleVO> readRank(int year) throws Exception {
+
+		return dao.readRank(year);
+	}
+
 
 }

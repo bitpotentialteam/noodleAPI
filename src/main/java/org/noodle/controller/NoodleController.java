@@ -56,7 +56,27 @@ public class NoodleController {
 		list = noodle.readBrand(brand);
 		
 		return list;
-	}                                                  
+	}       
+	
+	@GetMapping("/rank")
+	public List<NoodleVO> getRank()throws Exception{
+		
+		List<NoodleVO> list = new ArrayList<NoodleVO>();
+	
+		list = noodle.rankList();
+		
+		return list;
+	} 
+	
+	@GetMapping("/rank/{year}")
+	public List<NoodleVO> getReadRank(@PathVariable("year") int year)throws Exception{
+		
+		List<NoodleVO> list = new ArrayList<NoodleVO>();
+	
+		list = noodle.readRank(year);
+		
+		return list;
+	} 
 	
 	
 	

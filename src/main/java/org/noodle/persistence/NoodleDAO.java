@@ -15,8 +15,8 @@ public interface NoodleDAO {
 	public List<NoodleVO> listAll()throws Exception;
 	public List<NoodleVO> search(Criteria cri)throws Exception;
 	public List<NoodleVO> readBrand(String brand) throws Exception;
-	
-	
+	public List<NoodleVO> rankList()throws Exception;
+	public List<NoodleVO> readRank(int year) throws Exception;
 
 	
 	

@@ -60,6 +60,19 @@ public class NoodleDAOImpl implements NoodleDAO {
 		return session.selectList(namespace + ".readBrand",brand);
 	}
 
+	@Override
+	public List<NoodleVO> rankList() throws Exception {
+		
+		return session.selectList(namespace + ".rankList");
+	}
+	
+
+	@Override
+	public List<NoodleVO> readRank(int year) throws Exception {
+		
+		return session.selectList(namespace + ".readRank",year);
+	}
+
 
 
 }
