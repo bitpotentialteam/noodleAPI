@@ -14,12 +14,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/noodles/*")
+@RequestMapping("/api/noodles/*")
 public class NoodleController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(TestController.class);
@@ -33,6 +34,8 @@ public class NoodleController {
 	@GetMapping("")
 	public List<NoodleVO> NoodlesAll() throws Exception{
 		
+		logger.info("noodle all called...");
+		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
 		Criteria cri = new Criteria();
 		list = noodle.search(cri);
@@ -42,8 +45,10 @@ public class NoodleController {
 	@GetMapping("/{name}")
 	public List<NoodleVO> getNoodleInfo(@PathVariable("name") String name)throws Exception{
 		
+		logger.info("noodle info called..." + name);
+		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
-		//list = noodle.	
+		//list = noodle.se	
 	
 		return list;
 	}
@@ -51,14 +56,18 @@ public class NoodleController {
 	@GetMapping("/brands/{brand}")
 	public List<NoodleVO> getBrandInfo(@PathVariable("brand") String brand)throws Exception{
 		
+		logger.info("brand called..." + brand);
+		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
-		//list = noodle.();	
+		list = noodle.readBrand(brand);	
 	
 		return list;
 	}       
 	
 	@GetMapping("/rank")
 	public List<NoodleVO> getRank()throws Exception{
+		
+		logger.info("rank called...");
 		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
 	
@@ -70,6 +79,8 @@ public class NoodleController {
 	@GetMapping("/rank/{year}")
 	public List<NoodleVO> getReadRank(@PathVariable("year") int year)throws Exception{
 		
+		logger.info("rank/year called..." + year);
+		
 		List<NoodleVO> list = new ArrayList<NoodleVO>();
 	
 		list = noodle.readRank(year);
@@ -77,15 +88,17 @@ public class NoodleController {
 		return list;
 	} 
 	
+	@GetMapping("/search")
+	public List<NoodleVO> search(@ModelAttribute("cri") Criteria cri)throws Exception{
 	
-	
-	
-//	@GetMapping("/{name}")
-//	public @ResponseBody List<NoodleVO> list(@ModelAttribute(name) String name , Model model )throws Exception{
-//		
-//		
-//		return list ;
-//	}
+		logger.info("search called..." + cri.toString());
+		
+		List<NoodleVO> list = new ArrayList<NoodleVO>();
+		
+		list = noodle.search(cri);
+		
+		return list;
+	}
 	
 	
 	
