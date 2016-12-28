@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.noodle.domain.Criteria;
 import org.noodle.domain.RankVO;
 import org.noodle.persistence.RankDAO;
 import org.springframework.stereotype.Service;

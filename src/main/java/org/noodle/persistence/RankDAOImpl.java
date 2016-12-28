@@ -6,7 +6,6 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.noodle.domain.RankVO;
-import org.noodle.domain.Criteria;
 import org.springframework.stereotype.Repository;
 
 @Repository

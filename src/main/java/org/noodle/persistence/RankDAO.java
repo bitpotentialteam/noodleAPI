@@ -2,7 +2,6 @@ package org.noodle.persistence;
 
 import java.util.List;
 
-import org.noodle.domain.Criteria;
 import org.noodle.domain.RankVO;
 
 public interface RankDAO {

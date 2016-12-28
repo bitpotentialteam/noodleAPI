@@ -5,7 +5,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.noodle.domain.NoodleVO;
 import org.noodle.domain.RankVO;
 import org.noodle.service.RankServiceImpl;
 import org.slf4j.Logger;

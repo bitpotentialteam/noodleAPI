@@ -3,7 +3,6 @@ package org.noodle.service;
 import java.util.List;
 
 import org.noodle.domain.RankVO;
-import org.noodle.domain.Criteria;
 
 public interface RankService {
 
